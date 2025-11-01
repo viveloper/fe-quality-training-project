@@ -1,0 +1,34 @@
+{
+  "name": "fe-quality-training-project",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "pnpm@9.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "next dev -p 3000",
+    "build": "next build",
+    "start": "next start -p 3000",
+    "lint": "eslint .",
+    "test": "vitest",
+    "e2e": "playwright test",
+    "lhci:collect": "lhci collect --url=http://localhost:3000 --numberOfRuns=1 || true",
+    "lhci:assert": "lhci assert || true"
+  },
+  "dependencies": {
+    "next": "15.4.7",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "zod": "3.23.8",
+    "chart.js": "4.4.3"
+  },
+  "devDependencies": {
+    "@types/node": "20.11.30",
+    "@types/react": "18.2.66",
+    "eslint": "8.57.0",
+    "typescript": "5.4.5",
+    "vitest": "3.0.5",
+    "prettier": "^3.6.2",
+    "@playwright/test": "1.48.0",
+    "@lhci/cli": "0.13.0"
+  }
+}

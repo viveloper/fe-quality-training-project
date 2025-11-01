@@ -1,0 +1,25 @@
+
+name: CI
+on:
+  pull_request:
+  push:
+    branches: [ main ]
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'pnpm'
+      - run: corepack enable
+      - run: pnpm i
+      - run: pnpm build
+      - run: pnpm test --if-present
+      - run: pnpm e2e --if-present
+      - run: |
+          (pnpm dev & sleep 5) &
+          sleep 10
+          pnpm lhci:collect
+          pnpm lhci:assert
