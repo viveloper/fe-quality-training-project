@@ -2,8 +2,5 @@
 const nextConfig = {
   experimental: { serverActions: { allowedOrigins: ['*'] } },
   reactStrictMode: true,
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
 };
 export default nextConfig;
