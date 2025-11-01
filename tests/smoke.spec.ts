@@ -1,4 +1,3 @@
-
 import { test, expect } from '@playwright/test';
 test('home has links', async ({ page }) => {
   await page.goto('/');

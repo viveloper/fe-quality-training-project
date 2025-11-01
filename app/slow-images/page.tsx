@@ -1,4 +1,3 @@
-
 const images = Array.from({ length: 30 }).map((_, i) => `https://picsum.photos/seed/${i}/1200/800`);
 
 export default function SlowImages() {

@@ -1,4 +1,3 @@
-
 'use client';
 import { Chart, registerables } from 'chart.js';
 import { useEffect, useRef } from 'react';
@@ -13,7 +12,9 @@ export default function BundleBloat() {
       type: 'line',
       data: {
         labels: Array.from({ length: 100 }, (_, i) => i),
-        datasets: [{ label: 'Heavy Chart', data: Array.from({ length: 100 }, () => Math.random()) }],
+        datasets: [
+          { label: 'Heavy Chart', data: Array.from({ length: 100 }, () => Math.random()) },
+        ],
       },
     });
     return () => c.destroy();
